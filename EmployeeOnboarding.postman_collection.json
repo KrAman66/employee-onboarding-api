@@ -1,0 +1,123 @@
+{
+  "info": {
+    "name": "Employee Onboarding API",
+    "_postman_id": "b35b54aa-26d5-4e3c-bf93-334f97374d9e",
+    "description": "Postman collection for testing Employee Onboarding backend APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Masters - Get Departments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/masters/departments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "masters", "departments"]
+        }
+      }
+    },
+    {
+      "name": "Masters - Get Designations (IT)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/masters/designations?department=D02",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "masters", "designations"],
+          "query": [
+            { "key": "department", "value": "D02" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Employees - Create Employee",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"first_name\": \"Ravi\",\n  \"last_name\": \"Kumar\",\n  \"dob\": \"1995-06-15\",\n  \"gender\": \"Male\",\n  \"email\": \"ravi.kumar@example.com\",\n  \"mobile_number\": \"9876543210\",\n  \"department_id\": \"D02\",\n  \"designation_id\": \"DS01\",\n  \"employment_type_id\": \"PERM\",\n  \"joining_date\": \"2025-08-15\",\n  \"location_id\": \"LOC1\",\n  \"preferred_shift_id\": \"S1\",\n  \"role_id\": \"R03\",\n  \"reporting_manager_id\": null,\n  \"address_line1\": \"123 MG Road\",\n  \"address_line2\": \"\",\n  \"country_id\": \"IN\",\n  \"state_id\": \"KA\",\n  \"city\": \"Bangalore\",\n  \"pincode\": \"560001\",\n  \"pan_number\": \"ABCDE1234F\",\n  \"aadhaar_number\": \"123412341234\",\n  \"bank_id\": \"SBI\",\n  \"account_number\": \"123456789012\",\n  \"ifsc_code\": \"SBIN0001234\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "employees"]
+        }
+      }
+    },
+    {
+      "name": "Employees - Get All Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "employees"]
+        }
+      }
+    },
+    {
+      "name": "Employees - Get Employee By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "employees", "1"]
+        }
+      }
+    },
+    {
+      "name": "Employees - Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"first_name\": \"Ravi\",\n  \"last_name\": \"Sharma\",\n  \"dob\": \"1995-06-15\",\n  \"gender\": \"Male\",\n  \"email\": \"ravi.sharma@example.com\",\n  \"mobile_number\": \"9876543210\",\n  \"department_id\": \"D02\",\n  \"designation_id\": \"DS02\",\n  \"employment_type_id\": \"PERM\",\n  \"joining_date\": \"2025-08-15\",\n  \"location_id\": \"LOC1\",\n  \"preferred_shift_id\": \"S1\",\n  \"role_id\": \"R03\",\n  \"reporting_manager_id\": null,\n  \"address_line1\": \"456 Brigade Road\",\n  \"address_line2\": \"\",\n  \"country_id\": \"IN\",\n  \"state_id\": \"KA\",\n  \"city\": \"Bangalore\",\n  \"pincode\": \"560001\",\n  \"pan_number\": \"ABCDE1234F\",\n  \"aadhaar_number\": \"123412341234\",\n  \"bank_id\": \"SBI\",\n  \"account_number\": \"123456789012\",\n  \"ifsc_code\": \"SBIN0001234\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "employees", "1"]
+        }
+      }
+    },
+    {
+      "name": "Employees - Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "employees", "1"]
+        }
+      }
+    }
+  ]
+}
